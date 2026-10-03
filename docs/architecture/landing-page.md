@@ -42,13 +42,24 @@ facts from the Google Play listing and the myStandby app sources.
 - **Brand.** Dark theme matching the app, brand gradient `#94B9FF → #3F51B5`
   from the launcher icon; `public/favicon.svg` is rebuilt from the launcher
   vector.
-- **Legal links.** The footer links the app's privacy policy
-  (`software-lab.io/data-protection`) and the developer's imprint on
-  michaelschreiber.net.
+- **Own privacy policy as a second Vite page.** `/privacy/` is built from
+  `app/privacy/index.html` (Vite multi-page `build.rollupOptions.input`), so it
+  is a real static file on GitHub Pages without a router or SPA 404 fallback.
+  It covers the website (GitHub Pages hosting) and the app: Firebase
+  Crashlytics, Google Analytics for Firebase, the feedback relay on Cloudflare
+  Workers (`feedback-mystandby.michaelschreiber.net`), storage in Jira
+  (Atlassian), Formspree for app versions ≤ 1.14.2, and Google Play Billing.
+  Facts come from the myStandby app sources and its MYS-39 concept. The page
+  has no link to software-lab.io, which is going offline.
+- **Legal links.** The footer links the own privacy page (same tab) and the
+  developer's imprint on michaelschreiber.net. Header links use
+  `${BASE_URL}#section`, so they work from both pages.
 
 ## Affected Components
 
 - `app/src/App.vue` — composes the sections.
+- `app/privacy/index.html`, `app/src/privacy.ts`, `app/src/PrivacyApp.vue`,
+  `app/src/components/PrivacyPolicy.vue` — privacy policy page.
 - `app/src/components/` — `SiteHeader`, `HeroSection`, `FeatureGrid`,
   `ScreenshotGallery`, `StepsSection`, `ProSection`, `FaqSection`,
   `CtaSection`, `SiteFooter`, `PixelPhone`, `PlayStoreButton`, `AppLogo`,

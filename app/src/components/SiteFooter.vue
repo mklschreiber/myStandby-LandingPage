@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DEVELOPER_URL, IMPRINT_URL, PLAY_STORE_URL, PRIVACY_POLICY_URL } from '@/data/content'
+import { DEVELOPER_URL, IMPRINT_URL, PLAY_STORE_URL, PRIVACY_PATH } from '@/data/content'
 import AppLogo from './AppLogo.vue'
 
 const year = new Date().getFullYear()
@@ -14,7 +14,7 @@ const year = new Date().getFullYear()
       </div>
       <nav class="site-footer__links" aria-label="Footer">
         <a :href="PLAY_STORE_URL" target="_blank" rel="noopener noreferrer">Google Play</a>
-        <a :href="PRIVACY_POLICY_URL" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a :href="PRIVACY_PATH">Privacy Policy</a>
         <a :href="IMPRINT_URL" target="_blank" rel="noopener noreferrer">Imprint</a>
         <a :href="DEVELOPER_URL" target="_blank" rel="noopener noreferrer">Developer</a>
       </nav>

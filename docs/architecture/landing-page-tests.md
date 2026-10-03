@@ -24,6 +24,8 @@ composed `App`. Visual layout is verified manually in the browser.
 | PixelPhone | srcset, alt, lazy/eager loading, camera and side buttons | Component | ✅ |
 | PlayStoreButton | href, `target`/`rel`, large variant | Component | ✅ |
 | App | headline, feature cards, gallery items, FAQ, 5 Play links, anchors | Component | ✅ |
+| PrivacyPolicy | names Crashlytics, Analytics, Cloudflare, Jira, Atlassian; relay host; controller mailto; TOC anchors; no software-lab | Component | ✅ |
+| SiteFooter | links `/privacy/` in the same tab; no software-lab | Component | ✅ |
 
 ## Untested Areas
 

@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import AppLogo from './AppLogo.vue'
 import PlayStoreButton from './PlayStoreButton.vue'
+import { HOME_PATH } from '@/data/content'
 
 const links = [
-  { href: '#features', label: 'Features' },
-  { href: '#screenshots', label: 'Screenshots' },
-  { href: '#pro', label: 'PRO' },
-  { href: '#faq', label: 'FAQ' },
+  { href: `${HOME_PATH}#features`, label: 'Features' },
+  { href: `${HOME_PATH}#screenshots`, label: 'Screenshots' },
+  { href: `${HOME_PATH}#pro`, label: 'PRO' },
+  { href: `${HOME_PATH}#faq`, label: 'FAQ' },
 ]
 </script>
 
 <template>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="#top" class="site-header__home" aria-label="myStandby home">
+      <a :href="HOME_PATH" class="site-header__home" aria-label="myStandby home">
         <AppLogo :size="34" />
       </a>
       <nav class="site-header__nav" aria-label="Main">
