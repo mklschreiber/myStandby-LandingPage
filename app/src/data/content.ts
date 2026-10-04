@@ -5,7 +5,7 @@ export const HOME_PATH = import.meta.env.BASE_URL
 export const PRIVACY_PATH = `${import.meta.env.BASE_URL}privacy/`
 export const IMPRINT_URL = 'https://michaelschreiber.net/impressum'
 export const DEVELOPER_URL = 'https://michaelschreiber.net'
-export const FEEDBACK_RELAY_HOST = 'feedback-mystandby.michaelschreiber.net'
+export const FEEDBACK_RELAY_HOST = 'feedback.mystandby.app'
 export const PRIVACY_LAST_UPDATED = '4 October 2026'
 
 export const controller = {
