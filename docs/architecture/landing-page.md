@@ -47,7 +47,7 @@ facts from the Google Play listing and the myStandby app sources.
   is a real static file on GitHub Pages without a router or SPA 404 fallback.
   It covers the website (GitHub Pages hosting) and the app: Firebase
   Crashlytics, Google Analytics for Firebase, the feedback relay on Cloudflare
-  Workers (`feedback-mystandby.michaelschreiber.net`), storage in Jira
+  Workers (`feedback.mystandby.app`), storage in Jira
   (Atlassian), Formspree for app versions ≤ 1.14.2, and Google Play Billing.
   Facts come from the myStandby app sources and its MYS-39 concept. The page
   has no link to software-lab.io, which is going offline.
