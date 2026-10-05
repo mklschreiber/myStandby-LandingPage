@@ -85,4 +85,5 @@ content.ts ──▶ section components ──▶ PixelPhone (screenshot id ─�
 
 ## Open Questions
 
-- Custom domain (CNAME) and absolute `og:image` URL once the domain is known.
+- ~~Custom domain (CNAME) and absolute `og:image` URL once the domain is known.~~
+  Resolved by [MYSL-1](MYSL-1-seo-optimization.md): host `www.mystandby.app`, absolute OG URLs.

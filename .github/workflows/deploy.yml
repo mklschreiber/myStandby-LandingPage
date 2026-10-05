@@ -44,7 +44,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Use '/' for a custom domain (CNAME in app/public/)
+          # Use '/' for the custom domain (configured in the repository Pages settings)
           VITE_BASE_URL: '/'
 
       - name: Setup Pages

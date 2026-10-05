@@ -31,4 +31,28 @@ describe('App', () => {
       ['#features', '#screenshots', '#pro', '#faq'].every((id) => wrapper.find(id).exists()),
     ).toBe(true)
   })
+
+  it('has exactly one h1 (MYSL-1 AC9)', () => {
+    expect(wrapper.findAll('h1')).toHaveLength(1)
+  })
+
+  it('mentions Android standby in the h1 (MYSL-1 AC9)', () => {
+    expect(wrapper.get('h1').text()).toContain('Android standby')
+  })
+
+  it('gives every image an alt attribute (MYSL-1 AC10)', () => {
+    expect(wrapper.findAll('img').filter((img) => img.attributes('alt') === undefined)).toEqual(
+      [],
+    )
+  })
+
+  it('gives every screenshot image a non-empty alt text (MYSL-1 AC10)', () => {
+    expect(
+      wrapper.findAll('img.pixel__image').filter((img) => !img.attributes('alt')?.trim()),
+    ).toEqual([])
+  })
+
+  it('renders screenshot images (MYSL-1 AC10)', () => {
+    expect(wrapper.findAll('img.pixel__image').length).toBeGreaterThanOrEqual(screenshots.length)
+  })
 })
