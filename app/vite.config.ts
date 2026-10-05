@@ -3,11 +3,13 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+import { seoPlugin } from './vite-plugin-seo'
+
 // https://vite.dev/config/
 export default defineConfig({
   // Base URL for GitHub Pages; '/' for a custom domain, '/repo-name/' for username.github.io
   base: process.env.VITE_BASE_URL || '/',
-  plugins: [vue()],
+  plugins: [vue(), seoPlugin()],
   build: {
     rollupOptions: {
       input: {

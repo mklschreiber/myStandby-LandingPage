@@ -15,6 +15,13 @@ status: current
 - **Vite** provides development and production builds.
 - The Vite alias `@` resolves to `app/src`.
 - Vite's base URL is `VITE_BASE_URL` when set, otherwise `/`.
+- The local Vite plugin `app/vite-plugin-seo.ts` (no npm dependency) injects
+  the SEO head tags (title, description, canonical, Open Graph, Twitter card,
+  JSON-LD on the home page) and a `<noscript>` fallback into both HTML pages.
+  At build time it also generates `robots.txt` and `sitemap.xml` in `dist/`.
+  Its copy and builders live in `app/src/data/seo.ts`; env-free site
+  constants live in `app/src/data/site.ts`. Do not re-add
+  `public/robots.txt` or hand-written SEO tags to the HTML files.
 
 ## Client Libraries
 
