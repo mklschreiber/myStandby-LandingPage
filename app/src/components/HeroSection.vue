@@ -4,7 +4,7 @@ import PlayStoreButton from './PlayStoreButton.vue'
 import { screenshots } from '@/data/content'
 
 const standby = screenshots.find((shot) => shot.id === 'standby')!
-const previews = screenshots.find((shot) => shot.id === 'widget-previews')!
+const editor = screenshots.find((shot) => shot.id === 'mode-editor')!
 </script>
 
 <template>
@@ -18,7 +18,8 @@ const previews = screenshots.find((shot) => shot.id === 'widget-previews')!
         </h1>
         <p class="hero__lead">
           myStandby turns your phone into a smart display while it charges. Put any widget you love
-          on the native standby screen and design a nightstand that is uniquely yours.
+          on the native standby screen and create standby modes for day and night that are uniquely
+          yours.
         </p>
         <div class="hero__actions">
           <PlayStoreButton size="lg" />
@@ -33,8 +34,8 @@ const previews = screenshots.find((shot) => shot.id === 'widget-previews')!
       <div class="hero__devices">
         <div class="hero__phone hero__phone--back">
           <PixelPhone
-            :screenshot="previews.id"
-            :alt="previews.alt"
+            :screenshot="editor.id"
+            :alt="editor.alt"
             eager
             sizes="(max-width: 860px) 45vw, 260px"
           />

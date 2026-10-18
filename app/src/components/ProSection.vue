@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { planRows } from '@/data/content'
+import { planRows, PRICE_NOTE, pricePlans, screenshots } from '@/data/content'
 import CheckIcon from './icons/CheckIcon.vue'
 import PixelPhone from './PixelPhone.vue'
 import PlayStoreButton from './PlayStoreButton.vue'
+
+const chooseWidget = screenshots.find((shot) => shot.id === 'choose-widget')!
 </script>
 
 <template>
@@ -12,9 +14,19 @@ import PlayStoreButton from './PlayStoreButton.vue'
         <span class="eyebrow">Free &amp; PRO</span>
         <h2>Free to start. <span class="gradient-text">PRO</span> when you want more.</h2>
         <p>
-          All core features are free and without ads. A single one-time purchase unlocks PRO — no
-          subscription, and it is restored automatically from Google Play when you reinstall.
+          All core features are free and without ads. Unlock PRO with a monthly or yearly
+          subscription — both start with a 7-day free trial — or with a one-time lifetime purchase.
+          PRO is restored automatically from Google Play when you reinstall.
         </p>
+        <ul class="pro__plans" aria-label="PRO plans">
+          <li v-for="plan in pricePlans" :key="plan.id" class="pro__plan">
+            <span class="pro__plan-name">{{ plan.name }}</span>
+            <span class="pro__plan-price">{{ plan.price }}</span>
+            <span class="pro__plan-period">{{ plan.period }}</span>
+            <span class="pro__plan-note">{{ plan.note }}</span>
+          </li>
+        </ul>
+        <p class="pro__price-note">{{ PRICE_NOTE }}</p>
         <table class="plan-table">
           <thead>
             <tr>
@@ -43,7 +55,11 @@ import PlayStoreButton from './PlayStoreButton.vue'
         <PlayStoreButton class="pro__cta" />
       </div>
       <div class="pro__device">
-        <PixelPhone screenshot="settings" alt="myStandby settings screen" sizes="(max-width: 860px) 60vw, 300px" />
+        <PixelPhone
+          :screenshot="chooseWidget.id"
+          :alt="chooseWidget.alt"
+          sizes="(max-width: 860px) 60vw, 300px"
+        />
       </div>
     </div>
   </section>
@@ -71,6 +87,57 @@ import PlayStoreButton from './PlayStoreButton.vue'
   margin-top: 18px;
   color: var(--color-text-muted);
   font-size: 1.0625rem;
+}
+
+.pro__plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pro__plan {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.pro__plan-name {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pro__plan-price {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.pro__plan-period {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.pro__plan-note {
+  margin-top: 6px;
+  color: var(--color-text-subtle);
+  font-size: 0.8125rem;
+}
+
+.pro__copy > .pro__price-note {
+  margin-top: 10px;
+  color: var(--color-text-subtle);
+  font-size: 0.8125rem;
 }
 
 .plan-table {
@@ -127,6 +194,12 @@ import PlayStoreButton from './PlayStoreButton.vue'
 .pro__device {
   width: min(300px, 100%);
   justify-self: center;
+}
+
+@media (max-width: 520px) {
+  .pro__plans {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 860px) {

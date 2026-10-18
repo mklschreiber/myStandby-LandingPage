@@ -3,19 +3,19 @@ import { mount } from '@vue/test-utils'
 import PixelPhone from '@/components/PixelPhone.vue'
 
 const mountPhone = (eager = false) =>
-  mount(PixelPhone, { props: { screenshot: 'home', alt: 'Home screen', eager } })
+  mount(PixelPhone, { props: { screenshot: 'standby', alt: 'Standby screen', eager } })
 
 describe('PixelPhone', () => {
   it('renders the screenshot with responsive sources', () => {
     const img = mountPhone().get('img')
 
     expect(img.attributes('srcset')).toBe(
-      '/screenshots/home-480.webp 480w, /screenshots/home-960.webp 960w',
+      '/screenshots/standby-480.webp 480w, /screenshots/standby-960.webp 960w',
     )
   })
 
   it('uses the given alt text', () => {
-    expect(mountPhone().get('img').attributes('alt')).toBe('Home screen')
+    expect(mountPhone().get('img').attributes('alt')).toBe('Standby screen')
   })
 
   it('lazy-loads by default', () => {

@@ -6,6 +6,8 @@
  * fallback (AC8) and the HTML-path mapping (AC11). The plugin wiring against the real HTML
  * files is covered in `seoPlugin.spec.ts`.
  */
+import { existsSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import {
   absoluteUrl,
@@ -80,6 +82,18 @@ describe('pages', () => {
   it('lists the same screenshots as the gallery content', () => {
     expect([...SCREENSHOT_IDS]).toEqual(screenshots.map((shot) => shot.id))
   })
+
+  it.each(SCREENSHOT_IDS)('ships the 960 px JSON-LD screenshot for %s (MYSL-2)', (id) => {
+    expect(
+      existsSync(resolve(process.cwd(), 'public', 'screenshots', `${id}-960.webp`)),
+    ).toBe(true)
+  })
+
+  it('home description mentions modes, flip clock and picture frame (MYSL-2)', () => {
+    expect(pages.home.description).toBe(
+      'Turn your charging Android phone into a smart display: any widget on standby, modes for day and night, flip clock and picture frame. Free on Google Play.',
+    )
+  })
 })
 
 describe('absoluteUrl', () => {
@@ -142,10 +156,10 @@ describe('buildStructuredData', () => {
   it('lists absolute URLs of the five 960 px screenshots', () => {
     expect(graphNode('MobileApplication')?.screenshot).toEqual([
       'https://www.mystandby.app/screenshots/standby-960.webp',
-      'https://www.mystandby.app/screenshots/home-960.webp',
-      'https://www.mystandby.app/screenshots/widget-apps-960.webp',
-      'https://www.mystandby.app/screenshots/widget-previews-960.webp',
-      'https://www.mystandby.app/screenshots/settings-960.webp',
+      'https://www.mystandby.app/screenshots/modes-960.webp',
+      'https://www.mystandby.app/screenshots/mode-editor-960.webp',
+      'https://www.mystandby.app/screenshots/choose-widget-960.webp',
+      'https://www.mystandby.app/screenshots/feedback-960.webp',
     ])
   })
 

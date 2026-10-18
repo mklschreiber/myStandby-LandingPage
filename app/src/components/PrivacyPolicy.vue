@@ -180,10 +180,11 @@ const sections = [
     <section id="purchases">
       <h2>7. Google Play &amp; in-app purchases</h2>
       <p>
-        The app is distributed through Google Play. The optional PRO upgrade is a one-time purchase
-        processed entirely by Google Play Billing. Payment details are handled by Google; I only
-        receive the information needed to unlock PRO (the purchase status and a purchase token),
-        which lets Google restore PRO after a reinstall. The legal basis is Art. 6(1)(b) GDPR
+        The app is distributed through Google Play. The optional PRO upgrade is available as a
+        one-time purchase or as a monthly or yearly subscription, processed entirely by Google Play
+        Billing. Payment details are handled by Google; I only receive the information needed to
+        unlock PRO (the purchase or subscription status and a purchase token), which lets Google
+        restore PRO after a reinstall. The legal basis is Art. 6(1)(b) GDPR
         (performance of the purchase contract). When you rate the app, the in-app review dialog is
         provided by Google Play. Google processes this data under the
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
