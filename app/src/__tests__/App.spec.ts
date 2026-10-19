@@ -55,4 +55,24 @@ describe('App', () => {
   it('renders screenshot images (MYSL-1 AC10)', () => {
     expect(wrapper.findAll('img.pixel__image').length).toBeGreaterThanOrEqual(screenshots.length)
   })
+  it('says "no subscription" only on the lifetime plan card (MYSL-2)', () => {
+    expect(wrapper.text().match(/no subscription/gi)).toEqual(['No subscription'])
+  })
+
+  it('shows the lifetime plan note "No subscription" (MYSL-2)', () => {
+    expect(wrapper.findAll('.pro__plan-note')[2]?.text()).toBe('No subscription')
+  })
+
+  it('renders the three PRO price plans (MYSL-2)', () => {
+    expect(wrapper.findAll('.pro__plan')).toHaveLength(3)
+  })
+
+  it.each(screenshots.map((shot) => shot.id))(
+    'shows the %s screenshot in the gallery (MYSL-2)',
+    (id) => {
+      expect(wrapper.find(`.gallery__item img[src="/screenshots/${id}-480.webp"]`).exists()).toBe(
+        true,
+      )
+    },
+  )
 })

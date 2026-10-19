@@ -11,6 +11,11 @@ export type IconName =
   | 'edit'
   | 'clock'
   | 'feedback'
+  | 'modes'
+  | 'trigger'
+  | 'contrast'
+  | 'photo'
+  | 'touch'
 
 export interface Feature {
   id: string
@@ -36,6 +41,14 @@ export interface PlanRow {
   label: string
   free: string | boolean
   pro: string | boolean
+}
+
+export interface PricePlan {
+  id: 'monthly' | 'yearly' | 'lifetime'
+  name: string
+  price: string
+  period: string
+  note: string
 }
 
 export interface FaqEntry {

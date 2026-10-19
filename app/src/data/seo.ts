@@ -10,10 +10,10 @@ export const OG_IMAGE: { path: '/og-image.jpg'; width: 1024; height: 500; alt: s
 
 export const SCREENSHOT_IDS: readonly string[] = [
   'standby',
-  'home',
-  'widget-apps',
-  'widget-previews',
-  'settings',
+  'modes',
+  'mode-editor',
+  'choose-widget',
+  'feedback',
 ]
 
 export const pages: Record<PageId, PageSeo> = {
@@ -22,7 +22,7 @@ export const pages: Record<PageId, PageSeo> = {
     path: '/',
     title: 'myStandby – Any Widget on Your Android Standby Screen',
     description:
-      'Turn your charging Android phone into a smart display: put any widget on the standby screen and build swipeable widget stacks. Free on Google Play.',
+      'Turn your charging Android phone into a smart display: any widget on standby, modes for day and night, flip clock and picture frame. Free on Google Play.',
   },
   privacy: {
     id: 'privacy',
