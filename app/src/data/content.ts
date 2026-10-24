@@ -4,7 +4,7 @@ export { PLAY_STORE_URL, DEVELOPER_URL } from './site'
 
 export const HOME_PATH = import.meta.env.BASE_URL
 export const PRIVACY_PATH = `${import.meta.env.BASE_URL}privacy/`
-export const IMPRINT_URL = 'https://michaelschreiber.net/impressum'
+export const IMPRINT_URL = 'https://www.michaelschreiber.net/#/imprint'
 export const FEEDBACK_RELAY_HOST = 'feedback.mystandby.app'
 export const PRIVACY_LAST_UPDATED = '19 October 2026'
 

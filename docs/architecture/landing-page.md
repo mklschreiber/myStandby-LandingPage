@@ -52,7 +52,8 @@ facts from the Google Play listing and the myStandby app sources.
   Facts come from the myStandby app sources and its MYS-39 concept. The page
   has no link to software-lab.io, which is going offline.
 - **Legal links.** The footer links the own privacy page (same tab) and the
-  developer's imprint on michaelschreiber.net. Header links use
+  developer's imprint at `https://www.michaelschreiber.net/#/imprint`
+  (new tab; corrected in MYSL-3). Header links use
   `${BASE_URL}#section`, so they work from both pages.
 
 ## Affected Components

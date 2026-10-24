@@ -31,6 +31,11 @@ application in `app/`.
 - [Tests for MYSL-2 Update Landing Page](MYSL-2-tests.md) — screenshot files
   without orphans, feature icons, PRO price plans and price note, hero/PRO
   screenshots, FAQ and privacy subscription wording.
+- [MYSL-3 Fix Imprint](MYSL-3-fix-imprint.md) — footer imprint link
+  (`IMPRINT_URL`) points to https://www.michaelschreiber.net/#/imprint, locked
+  by a footer test.
+- [Tests for MYSL-3 Fix Imprint](MYSL-3-tests.md) — footer tests lock the imprint
+  link to the literal URL, new tab and noopener; old /impressum URL gone.
 
 ## Reviews
 
@@ -41,6 +46,8 @@ application in `app/`.
   positive — round-1 findings (stack.md, post-deploy JSON-LD check) resolved; checks pass.
 - [Review for MYSL-2 Update Landing Page](MYSL-2-review.md) — round 1 (2026-10-19):
   positive — code and tests match the approved concept; facts match app 1.30.0; checks pass.
+- [Review for MYSL-3 Fix Imprint](MYSL-3-review.md) — round 1 (2026-10-21):
+  positive — imprint link is exactly https://www.michaelschreiber.net/#/imprint, locked by footer tests; checks pass.
 
 When a feature requires a durable architecture decision, add a concise
 Markdown concept document here, list it in this section, and record the
